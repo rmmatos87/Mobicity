@@ -582,34 +582,3 @@ class Mobicity:
     def _browser_kill(self):
         self._browser.quit()
         delattr(self, "_browser")
-        
-if __name__ == "__main__":
-    from getpass import getpass
-
-    # endereços
-    addresses = {
-        "home": "",
-        "work_front": "Av. Henrique Valadares, 26 - Centro, Rio de Janeiro - RJ, 20231-030, Brazil",
-        "work_back": "R. do Senado, 115 - Centro, Rio de Janeiro - RJ, 20231-000, Brazil",
-        "crossfit": "R. Araguaia, 895 - Freguesia de Jacarepaguá, Rio de Janeiro - RJ, 22745-270, Brasil"
-    }
-    if not addresses['home']:
-        input('Insira o endereço de casa: ')
-    m = Mobicity(
-        shift="day",
-        time_to_work="05:55",
-        time_to_home="19:05",
-        start_day="20/02/2024", 
-        days=6,
-        **addresses
-    )
-
-    # Ajustando preferências semanais
-    m.setup_schedule_weekdays("to_work", [0, 1, 2, 3, 4, 5, 6], home="home", work="work_front")
-    m.setup_schedule_weekdays("to_home", [0, 1, 2, 3, 4], home="crossfit", work="work_back")
-    m.setup_schedule_weekdays("to_home", [5, 6], home="home", work="work_front")
-
-    m.setup_rides(
-        input("E-mail Petrobras: "),
-        getpass("Senha do Mobicity (não é a senha Petrobras): ")
-    )
