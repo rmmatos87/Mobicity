@@ -1,0 +1,31 @@
+{
+    "_instruções": [
+        {"username": "Escreva a raiz do e-mail."},
+        {"addresses": "Escreva os endereços que forem ser usados no agendamento no formato {'apelido': endereço}"},
+        {"time": "Descreva os horários de ida para o trabalho e de retorno para casa, nos turnos do dia e da noite. Sempre no formato HH:MM."},
+        {"week_schedule": "Agendamento semanal, onde 0 é segunda-feira e 7 é domingo. Aponta a chave home para o 'apelido' da residência e a chave work para o 'apelido' do trabalho."}
+    ],
+    "username": "username",
+    "addresses": {
+        "home": "Seu endereço de casa conforme o google maps mostra - vide Figura 1",
+        "avhvaladares": "Av. Henrique Valadares, 28 - Centro, Rio de Janeiro - RJ, 20231-030",
+        "rsenado": "R. do Senado, 115 - Centro, Rio de Janeiro - RJ, 20231-000, Brazil",
+        "academia": "Um outro endereço"
+    },
+    "time": {
+        "time_to_work": {"day": "05:55", "night": "17:55"},
+        "time_to_home": {"day": "19:05", "night": "07:05"}
+    },
+    "week_schedule": {
+        "day": [
+            {"way": "to_work", "weekdays": [0, 1, 2, 3, 4, 5, 6], "home": "home", "work": "avhvaladares"},
+            {"way": "to_home", "weekdays": [0, 1, 2, 3, 4], "home": "academia", "work": "rsenado"},
+            {"way": "to_home", "weekdays": [5, 6], "home": "home", "work": "avhvaladares"}
+        ],
+        "night": [
+            {"way": "to_work", "weekdays": [0, 1, 2, 3, 4, 5, 6], "home": "home", "work": "avhvaladares"},
+            {"way": "to_home", "weekdays": [0, 1, 2, 3, 4], "home": "home", "work": "rsenado"},
+            {"way": "to_home", "weekdays": [5, 6], "home": "home", "work": "avhvaladares"}
+        ]
+    }
+}
